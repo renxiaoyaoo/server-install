@@ -30,8 +30,10 @@ KEY_FILE="$CERT_DIR/$DOMAIN.key"
 # xray vless reality
 XRAY_CONFIG_PATH='/etc/xray'
 VLESS_REALITY_PORT='443'
-REALITY_SERVER_NAME='www.microsoft.com'
-REALITY_TARGET='www.microsoft.com:443'
+# Keep this target stable and TLS 1.3-capable. Microsoft's current certificate
+# chain can exceed Xray's Reality handshake record limit on recent releases.
+REALITY_SERVER_NAME='www.cloudflare.com'
+REALITY_TARGET='www.cloudflare.com:443'
 
 # hysteria2
 HYSTERIA2_CONFIG_PATH='/etc/hysteria'
